@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <h1 class="title has-text-centered">Add a Developer</h1>
+        <hr>
+        <div class="columns is-centered">
+            <div class="column is-7">
+                <div class="box">
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="field">
+                            <div class="control">
+                                {{ form.first_name.label(class='label is-small') }}
+                                {{ form.first_name(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.last_name.label(class='label is-small') }}
+                                {{ form.last_name(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.email.label(class='label is-small') }}
+                                {{ form.email(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.address.label(class='label is-small') }}
+                                {{ form.address(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.langueges.label(class='label is-small') }}
+                                {{ form.langueges(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.level.label(class='label is-small') }}
+                                {{ form.level(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.info.label(class='label is-small') }}
+                                {{ form.info(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.submit(class='button is-block is-fullwidth is-success') }}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

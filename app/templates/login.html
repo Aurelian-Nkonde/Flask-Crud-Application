@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-7">
+                <div class="box">
+                    <h1 class="title is-3 has-text-centered">Login</h1>
+                    </br>
+                    <form action="" method="POST">
+                        {{ form.hidden_tag() }}
+                        <div class="field">
+                            <div class="control">
+                                {{ form.email.label(class='is-small label') }}
+                                {{ form.email(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.password.label(class='is-small label') }}
+                                {{ form.password(class='is-small input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.remember.label(class=' form-check-label') }}
+                                {{ form.remember(class='form-check-input') }}
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control">
+                                {{ form.submit(class='button is-block is-fullwidth is-success') }}
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+                    <hr>
+                    <button class="button is-block is-fullwidth is-primary">
+                        <a href="{{ url_for('signup') }}">Sign Up</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

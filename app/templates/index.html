@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <h1 class="title is-2 has-text-centered">Developer's Table</h1>
+                <hr>
+                <table class="table is-bordered is-hoverable is-fullwidth
+                is-striped">
+                    <thead>
+                        <tr>
+                            <th>Index</th>
+                            <th>F_Name</th>
+                            <th>Email</th>
+                            <th>Level</th>
+                            <th>More Options</th>
+                        </tr>
+                    </thead>
+                    {% for devs in developer %}
+                    <tbody>
+                        <tr>
+                            <th>{{devs.id}}</th>
+                            <td><a href="{{ url_for('detail', developer_id=devs.id) }}">{{devs.first_name}}</a></td>
+                            <td>{{devs.email}}</td>
+                            <td>{{devs.level}}</td>
+                            <td><a href="{{ url_for('edit') }}">edit</a> / <a href="{{ url_for('delete') }}">delete</a></td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

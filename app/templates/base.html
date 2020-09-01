@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    {% if title %}
+        <title>blog - {{ title }}</title>
+    {% else %}
+        <title>blog app</title>
+    {% endif %}
+</head>
+<body>
+    <nav class="navbar is-dark">
+        <div class="navbar-brand">
+          <a class="navbar-item ml-6" href="{{ url_for('index') }}">
+            <h1 class="is-title is-3">FLASK_CRUD</h1>
+          </a>
+          <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      
+        <div id="navbarExampleTransparentExample" class="navbar-menu"> 
+          <div class="navbar-end mr-6">
+            {% if current_user.is_authenticated %}
+              <a class="navbar-item has-background-success" href="{{ url_for('create') }}">
+                Add
+              </a>
+              <a class="navbar-item" href="{{ url_for('about') }}">
+                About
+              </a>
+              <a class="navbar-item" href="{{ url_for('logout') }}">
+                Logout
+              </a>
+            {% else %}
+              <a class="navbar-item" href="{{ url_for('login') }}">
+                  Login
+              </a>
+              <a class="navbar-item" href="{{ url_for('signup') }}">
+                  Register
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+
+
+    {% block content %}
+    {% endblock content %}
+      
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script> 
+</body>
+</html>
